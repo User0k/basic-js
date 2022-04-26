@@ -12,9 +12,13 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function deleteDigit(n) {
-  const nToStr = String(n).split('');
-  const reg = new RegExp(nToStr.slice().sort((a, b) => a - b)[0]);
-  return Number(nToStr.join('').replace(reg, ''));
+  const nToStr = String(n);
+  const arrToCompare = [];
+  for (let i = 0; i < nToStr.length; i++) {
+    arrToCompare.push(nToStr.slice(0, i) + nToStr.slice(i + 1));
+  }
+
+  return Math.max(...arrToCompare);
 }
 
 module.exports = {
