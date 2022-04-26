@@ -1,3 +1,5 @@
+const { NotImplementedError } = require('../extensions/index.js');
+
 /**
  * Given a string, return its encoding version.
  *
@@ -8,7 +10,7 @@
  * For aabbbc should return 2a3bc
  *
  */
- export default function encodeLine(str) {
+function encodeLine(str) {
   let res = '';
   let temp = 1;
   for (let i = 0; i < str.length; i++) {
@@ -26,3 +28,7 @@
 
   return res;
 }
+
+module.exports = {
+  encodeLine
+};

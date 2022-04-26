@@ -1,3 +1,5 @@
+const { NotImplementedError } = require('../extensions/index.js');
+
 /**
  * Calculate turns number and time (in seconds) required
  * to solve puzzle
@@ -12,7 +14,11 @@
  * calculateHanoi(9, 4308) => { turns: 511, seconds: 427 }
  *
  */
-export default function calculateHanoi(disksNumber, turnsSpeed) {
+function calculateHanoi(disksNumber, turnsSpeed) {
   const turnAmount = 2 ** disksNumber - 1;
   return { turns: turnAmount, seconds: Math.floor(3600 / turnsSpeed * turnAmount) };
 }
+
+module.exports = {
+  calculateHanoi
+};

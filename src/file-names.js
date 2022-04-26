@@ -1,3 +1,5 @@
+const { NotImplementedError } = require('../extensions/index.js');
+
 /**
  * There's a list of file, since two files cannot have equal names,
  * the one which comes later will have a suffix (k),
@@ -13,7 +15,7 @@
  * the output should be ["file", "file(1)", "image", "file(1)(1)", "file(2)"]
  *
  */
-export default function renameFiles(names) {
+function renameFiles(names) {
   const renamedFiles = [];
   let idx = 1;
 
@@ -29,3 +31,7 @@ export default function renameFiles(names) {
 
   return renamedFiles;
 }
+
+module.exports = {
+  renameFiles
+};

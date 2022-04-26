@@ -1,3 +1,5 @@
+const { NotImplementedError } = require('../extensions/index.js');
+
 /**
  * Given an array with heights, sort them except if the value is -1.
  *
@@ -9,7 +11,7 @@
  *
  * The result should be [-1, 150, 160, 170, -1, -1, 180, 190]
  */
-export default function sortByHeight(arr) {
+function sortByHeight(arr) {
   const sortedArr = [];
   let idx = 0;
   const presortedArr = arr.filter(h => h !== -1).sort((a, b) => a - b);
@@ -25,3 +27,7 @@ export default function sortByHeight(arr) {
 
   return sortedArr;
 }
+
+module.exports = {
+  sortByHeight
+};

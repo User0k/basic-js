@@ -1,3 +1,5 @@
+const { NotImplementedError } = require('../extensions/index.js');
+
 /**
  * In the popular Minesweeper game you have a board with some mines and those cells
  * that don't contain a mine have a number in it that indicates the total number of mines
@@ -21,7 +23,7 @@
  *  [1, 1, 1]
  * ]
  */
-export default function minesweeper (matrix) {
+function minesweeper(matrix) {
   const DIRECTIONS = [
     [-1, -1],
     [-1, 0],
@@ -58,8 +60,6 @@ export default function minesweeper (matrix) {
   return mineMatrix;
 }
 
-console.log(minesweeper([
-    [true, false, false],
-    [false, true, false],
-    [false, false, false]
-   ]))
+module.exports = {
+  minesweeper
+};
